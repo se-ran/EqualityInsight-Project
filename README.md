@@ -1,6 +1,6 @@
 # EqualityInsight-Project
 
-# Research Hypothesis
+## Research Hypothesis
 Countries with higher female graduation rates in science, technology, engineering, and mathematics (STEM) fields will have lower wage inequality.
 
 ## Final Goal

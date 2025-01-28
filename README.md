@@ -7,6 +7,8 @@ Countries with higher female graduation rates in science, technology, engineerin
 The increase in the number of female STEM graduates can contribute to higher employment rates, women's economic independence, and ultimately foster economic growth while reducing inequality.  
 (Aligned with **SDG Goal 5 (Gender Equality)** and **SDG Goal 8 (Decent Work and Economic Growth)**.)
 
+---
+
 ## Data Analysis and Conclusion
 
 ### 1. Regression Analysis

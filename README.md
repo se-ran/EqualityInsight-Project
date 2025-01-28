@@ -7,6 +7,48 @@ Countries with higher female graduation rates in science, technology, engineerin
 The increase in the number of female STEM graduates can contribute to higher employment rates, women's economic independence, and ultimately foster economic growth while reducing inequality.  
 (Aligned with **SDG Goal 5 (Gender Equality)** and **SDG Goal 8 (Decent Work and Economic Growth)**.)
 
+## Data Analysis and Conclusion
+
+### 1. Regression Analysis
+- **Best Model**: `XGBRegressor` was identified as the optimal regression model, achieving the highest R² score of **0.7323** and the lowest RMSE of **6.1634**.
+- **Attempts for Improvement**:
+  - Applied techniques such as hyperparameter tuning, outlier removal, data augmentation, and polynomial feature addition.
+  - However, these approaches provided only limited improvement over the baseline model.
+- **Key Findings**:
+  - The results indicate that countries with higher STEM graduation rates tend to exhibit lower wage inequality. The regression model demonstrates a reasonable ability to explain wage gap variability.
+
+---
+
+### 2. Classification Analysis
+- **Initial Model**: Logistic regression for binary classification of `wage_gap` achieved:
+  - **Accuracy**: 72%
+  - **Recall (Class 1)**: 88%
+  - However, the model suffered from **low precision**, resulting in many false positives.
+- **SMOTE for Imbalanced Data**:
+  - Addressed class imbalance using SMOTE, improving:
+    - **Accuracy**: 75%
+    - **Precision (Class 1)**: 85%
+  - **Drawback**: Recall for Class 1 dropped to 61%.
+- **Cost-Sensitive Logistic Regression**:
+  - Improved **Recall (Class 1)** significantly to **94%**, addressing the imbalance effectively.
+
+---
+
+### 3. Data Source Insights
+- Data source significantly influenced `wage_gap` values, highlighting its importance as a feature.
+- Incorporating source-specific effects was critical in improving model performance and interpretability.
+
+---
+
+### 4. Conclusion
+- **Best Models**:
+  - For regression: The **baseline XGBRegressor** model is the most suitable.
+  - For classification: The **cost-sensitive logistic regression** model performed best in capturing the nuances of class imbalance.
+- **Implications**:
+  - The analysis confirms that countries with higher STEM graduation rates for women are likely to experience less wage inequality.
+  - These models provide a reasonable foundation for explaining wage disparities and highlight the role of STEM education in promoting economic equity.
+
+
 ---
 
 ## 1. Machine Learning Tasks
@@ -105,6 +147,8 @@ The increase in the number of female STEM graduates can contribute to higher emp
 - **Defining Features and Target**:
   - Independent variables (`X`): Include `grad_rate` and one-hot encoded `source.label` variables.
   - Dependent variable (`y`): Use `wage_gap` as the target.
+ 
+  
 
 - **Splitting Dataset**:
   - Split data into training and testing sets to evaluate the model’s generalization performance.

@@ -19,8 +19,6 @@ The increase in the number of female STEM graduates can contribute to higher emp
 - **Key Findings**:
   - The results indicate that countries with higher STEM graduation rates tend to exhibit lower wage inequality. The regression model demonstrates a reasonable ability to explain wage gap variability.
 
----
-
 ### 2. Classification Analysis
 - **Initial Model**: Logistic regression for binary classification of `wage_gap` achieved:
   - **Accuracy**: 72%
@@ -34,13 +32,9 @@ The increase in the number of female STEM graduates can contribute to higher emp
 - **Cost-Sensitive Logistic Regression**:
   - Improved **Recall (Class 1)** significantly to **94%**, addressing the imbalance effectively.
 
----
-
 ### 3. Data Source Insights
 - Data source significantly influenced `wage_gap` values, highlighting its importance as a feature.
 - Incorporating source-specific effects was critical in improving model performance and interpretability.
-
----
 
 ### 4. Conclusion
 - **Best Models**:
@@ -61,8 +55,6 @@ The increase in the number of female STEM graduates can contribute to higher emp
   - Compare the performance of models such as `XGBRegressor`, `Random Forest`, and `Logistic Regression` using:
     - **Regression Metrics**: R², RMSE
     - **Classification Metrics**: Accuracy, Precision, Recall, F1-score
-
----
 
 ## 2. Data Definition
 
@@ -87,8 +79,6 @@ The increase in the number of female STEM graduates can contribute to higher emp
   - Include STEM graduation rates and wage inequality metrics as critical features for regression models.
 - Feature engineering:
   - Add economic and social factors to improve model performance.
- 
----
 
 ## 3. Data Processing Workflow
 
@@ -110,8 +100,6 @@ The increase in the number of female STEM graduates can contribute to higher emp
 - **Removing Unnecessary Columns**:
   - Drop columns not directly relevant to the analysis to simplify the dataset.
 
----
-
 ### (2) **Distribution of Tertiary Graduates by Field of Study - UIS.Stat (2017-2023)**
 
 - **Filtering Data**:
@@ -132,8 +120,6 @@ The increase in the number of female STEM graduates can contribute to higher emp
   - Normalize values to improve comparability between groups and adjust for distribution differences.
   - This ensures fairness in model training and interpretation.
 
----
-
 ### (3) **Data Merging and Preprocessing**
 
 - **Merging Datasets**:
@@ -148,9 +134,7 @@ The increase in the number of female STEM graduates can contribute to higher emp
 
 - **Defining Features and Target**:
   - Independent variables (`X`): Include `grad_rate` and one-hot encoded `source.label` variables.
-  - Dependent variable (`y`): Use `wage_gap` as the target.
- 
-  
+  - Dependent variable (`y`): Use `wage_gap` as the target.  
 
 - **Splitting Dataset**:
   - Split data into training and testing sets to evaluate the model’s generalization performance.
